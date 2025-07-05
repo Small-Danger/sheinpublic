@@ -261,11 +261,28 @@
     </div>
 
     <script>
-        // Compteur de visiteurs (simulé)
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount = parseInt(visitorCount) + Math.floor(Math.random() * 5) + 1;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('visitorCount').textContent = visitorCount.toLocaleString();
+        // Compteur de visiteurs réel avec CountAPI
+        const counterKey = "sheinpublic-visiteurs";
+        const localKey = "sheinpublic-visited";
+        const visitorCountEl = document.getElementById('visitorCount');
+
+        // Vérifie si c'est la première visite sur ce navigateur
+        if (!localStorage.getItem(localKey)) {
+            // Incrémente le compteur sur CountAPI
+            fetch(`https://api.countapi.xyz/hit/sheinpublic/${counterKey}`)
+                .then(res => res.json())
+                .then(data => {
+                    visitorCountEl.textContent = data.value.toLocaleString();
+                    localStorage.setItem(localKey, '1');
+                });
+        } else {
+            // Récupère juste la valeur sans incrémenter
+            fetch(`https://api.countapi.xyz/get/sheinpublic/${counterKey}`)
+                .then(res => res.json())
+                .then(data => {
+                    visitorCountEl.textContent = data.value.toLocaleString();
+                });
+        }
 
         // Conversion en temps réel
         const amountInput = document.getElementById('amount');
