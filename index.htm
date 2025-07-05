@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shein Express - Validation de panier vers l'Afrique</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FE6600',
+                        secondary: '#000000',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .country-flag {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            margin-right: 8px;
+        }
+        .payment-logo {
+            height: 32px;
+            width: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        .payment-logo:hover {
+            filter: grayscale(0%);
+        }
+        .conversion-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        .mobile-optimized {
+            padding: 1rem;
+        }
+        @media (max-width: 768px) {
+            .mobile-optimized {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 font-sans antialiased">
+    <!-- Compteur de visiteurs -->
+    <div class="bg-gradient-to-r from-primary to-orange-500 text-white py-3 px-4 text-center text-sm shadow-lg">
+        <i class="fas fa-users mr-2"></i>
+        <span id="visitorCount" class="font-bold">0</span> personnes ont utilisé notre service cette semaine
+    </div>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-6 md:py-8">
+        <div class="flex flex-col items-center justify-center">
+            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-primary p-1 mb-4 animate-fade-in shadow-lg">
+                <img src="images/logo.png" alt="Shein Express Logo" class="w-full h-full rounded-full object-cover" onerror="this.src='https://via.placeholder.com/100/fe6600/ffffff?text=SE'">
+            </div>
+            <h1 class="text-2xl md:text-4xl font-bold text-center text-gray-800 mb-3 leading-tight">
+                Validation de Panier Shein
+            </h1>
+            <p class="text-base md:text-lg text-gray-600 text-center max-w-2xl mb-4">
+                Livraison rapide et sécurisée vers l'Afrique
+            </p>
+            
+            <!-- Drapeaux des pays -->
+            <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border">
+                    <img src="https://flagcdn.com/bf.svg" alt="Burkina Faso" class="country-flag">
+                    <span class="text-xs font-medium text-gray-700">Burkina Faso</span>
+                </div>
+                <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border">
+                    <img src="https://flagcdn.com/ma.svg" alt="Maroc" class="country-flag">
+                    <span class="text-xs font-medium text-gray-700">Maroc</span>
+                </div>
+                <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border">
+                    <img src="https://flagcdn.com/ci.svg" alt="Côte d'Ivoire" class="country-flag">
+                    <span class="text-xs font-medium text-gray-700">Côte d'Ivoire</span>
+                </div>
+                <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border">
+                    <img src="https://flagcdn.com/gh.svg" alt="Ghana" class="country-flag">
+                    <span class="text-xs font-medium text-gray-700">Ghana</span>
+                </div>
+                <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm border">
+                    <img src="https://flagcdn.com/tg.svg" alt="Togo" class="country-flag">
+                    <span class="text-xs font-medium text-gray-700">Togo</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Annonce -->
+    <div class="mx-4 md:mx-auto md:max-w-3xl mb-6 animate-fade-in">
+        <div class="bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 border-l-4 border-orange-600 p-4 md:p-6 rounded-r-lg shadow-sm">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 text-white text-xl md:text-2xl">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="ml-3 md:ml-4">
+                    <p class="text-sm md:text-base text-white leading-relaxed font-semibold">
+                        📦 <strong>Prochaine vague de commande :</strong> Du Dimanche au Lundi<br>
+                        🚚 <strong>Livraison :</strong> Sous 3 semaines<br>
+                        💳 <strong>Paiement :</strong> Possible par tranche<br>
+                        <span class="block mt-2 text-amber-100 font-bold">Livraison <span class="underline">gratuite à l'arrivée à Ouagadougou (Burkina Faso)</span>.<br>Expédition à vos frais dans les autres villes et pays.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Conversion Améliorée -->
+    <section class="container mx-auto px-4 py-6 md:py-8 max-w-md">
+        <div class="conversion-card rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+            <div class="bg-gradient-to-r from-primary to-orange-500 p-4 md:p-6 text-white">
+                <h2 class="text-xl md:text-2xl font-bold text-center">Calculateur de Prix</h2>
+                <p class="text-center text-orange-100 text-sm mt-1">Conversion en temps réel</p>
+            </div>
+            
+            <div class="p-4 md:p-6 space-y-4">
+                <div>
+                    <label for="amount" class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-dollar-sign mr-1"></i>Montant du panier en USD
+                    </label>
+                    <input type="number" id="amount" placeholder="Ex: 50.00" min="1" step="0.01"
+                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-lg">
+                </div>
+                
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-user mr-1"></i>Votre nom (facultatif)
+                    </label>
+                    <input type="text" id="name" placeholder="Votre nom"
+                        class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                </div>
+                
+                <!-- Résultat de conversion amélioré -->
+                <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-4 rounded-xl border border-blue-200">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-gray-600 font-medium">Montant en CFA:</span>
+                        <span id="cfaAmount" class="text-2xl font-bold text-primary">0 FCFA</span>
+                    </div>
+                    <div class="text-xs text-gray-500 bg-white p-2 rounded border">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Formule: (USD × 950) + 1000 FCFA (frais de service)
+                    </div>
+                </div>
+                
+                <button id="whatsappBtn" class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                    <span class="text-lg">Commander via WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Moyens de Paiement -->
+    <section class="container mx-auto px-4 py-8 max-w-4xl">
+        <h2 class="text-xl md:text-2xl font-bold text-center text-gray-800 mb-6">Moyens de Paiement Acceptés</h2>
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <div class="text-center">
+                    <img src="images/orange_money.png" alt="Orange Money" class="payment-logo mx-auto mb-2" style="filter:none;">
+                    <span class="text-xs text-gray-600">Orange Money</span>
+                </div>
+                <div class="text-center">
+                    <img src="images/cih_bank.png" alt="CIH Bank" class="payment-logo mx-auto mb-2" style="filter:none;">
+                    <span class="text-xs text-gray-600">CIH Bank</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Informations -->
+    <section class="container mx-auto px-4 py-8 max-w-4xl">
+        <h2 class="text-xl md:text-2xl font-bold text-center text-orange-700 mb-8">Comment ça marche ?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-orange-50 via-amber-100 to-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl transition-all duration-300">
+                <div class="bg-gradient-to-br from-orange-400 to-amber-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
+                    <span>1</span>
+                </div>
+                <h3 class="font-bold text-lg mb-2 text-center text-orange-700">Sélectionnez vos articles</h3>
+                <p class="text-gray-700 text-center">Faites votre panier sur Shein comme d'habitude.</p>
+            </div>
+            <div class="bg-gradient-to-br from-orange-50 via-amber-100 to-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl transition-all duration-300">
+                <div class="bg-gradient-to-br from-orange-400 to-amber-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
+                    <span>2</span>
+                </div>
+                <h3 class="font-bold text-lg mb-2 text-center text-orange-700">Calculez le montant</h3>
+                <p class="text-gray-700 text-center">Utilisez notre calculateur pour voir le total en CFA.</p>
+            </div>
+            <div class="bg-gradient-to-br from-orange-50 via-amber-100 to-white p-8 rounded-2xl shadow-lg flex flex-col items-center hover:shadow-2xl transition-all duration-300">
+                <div class="bg-gradient-to-br from-orange-400 to-amber-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl mb-4 shadow-lg">
+                    <span>3</span>
+                </div>
+                <h3 class="font-bold text-lg mb-2 text-center text-orange-700">Validez par WhatsApp</h3>
+                <p class="text-gray-700 text-center">Envoyez votre commande via WhatsApp pour validation et paiement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Groupe WhatsApp + QR Code -->
+    <section class="container mx-auto px-4 py-12 max-w-2xl text-center">
+        <div class="bg-gradient-to-r from-primary to-orange-400 rounded-2xl p-6 md:p-8 text-white shadow-xl animate-fade-in">
+            <i class="fab fa-whatsapp text-4xl md:text-5xl mb-4 animate-float"></i>
+            <h2 class="text-xl md:text-2xl font-bold mb-4">Rester informé des prochaines commandes</h2>
+            <p class="mb-6 text-sm md:text-base">Rejoignez notre groupe WhatsApp pour recevoir les dernières actualités et dates de livraison.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-6">
+                <a href="https://chat.whatsapp.com/JVcDBmjjAux72pmR73eKqi" target="_blank" class="inline-block bg-white text-primary font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg mb-4 md:mb-0">
+                    <i class="fab fa-whatsapp mr-2"></i> Rejoindre le groupe
+                </a>
+                <div class="flex flex-col items-center">
+                    <img src="images/qr_whatsapp_group.png" alt="QR Code Groupe WhatsApp" class="w-32 h-32 md:w-40 md:h-40 rounded-lg border-4 border-white shadow-lg bg-white" />
+                    <span class="text-xs text-white mt-2">Scannez pour rejoindre le groupe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-orange-700 via-orange-900 to-amber-700 text-white py-8 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2 font-semibold">&copy; 2024 B.Landry Shein </p>
+            <p class="mb-2">Livraison gratuite à Ouagadougou. Expédition possible partout en Afrique.</p>
+            <p class="mb-2">Contact WhatsApp : <a href="https://wa.me/22664524811" class="underline text-amber-200 hover:text-white">+226 64 52 48 11</a></p>
+            <p class="text-xs text-amber-100">Votre confiance, notre priorité. Paiement sécurisé, service premium.</p>
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/22664524811" target="_blank" class="bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 animate-pulse-slow">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Compteur de visiteurs (simulé)
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount = parseInt(visitorCount) + Math.floor(Math.random() * 5) + 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitorCount').textContent = visitorCount.toLocaleString();
+
+        // Conversion en temps réel
+        const amountInput = document.getElementById('amount');
+        const cfaAmount = document.getElementById('cfaAmount');
+        const nameInput = document.getElementById('name');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+
+        amountInput.addEventListener('input', function() {
+            const usdAmount = parseFloat(this.value) || 0;
+            const cfaValue = Math.round(usdAmount * 950 + 1000);
+            cfaAmount.textContent = cfaValue.toLocaleString() + ' FCFA';
+        });
+
+        // Redirection WhatsApp avec les vrais liens
+        whatsappBtn.addEventListener('click', function() {
+            const usdAmount = parseFloat(amountInput.value) || 0;
+            const cfaValue = Math.round(usdAmount * 950 + 1000);
+            const name = nameInput.value.trim();
+            
+            let message = `Bonjour,\n\n`;
+            if (name) message += `Je m'appelle ${name}.\n\n`;
+            message += `Montant USD: $${usdAmount}\n`;
+            message += `Montant CFA: ${cfaValue.toLocaleString()} FCFA\n\n`;
+            message += `Je souhaite valider mon panier Shein pour la prochaine vague.`;
+            
+            const whatsappUrl = `https://wa.me/22664524811?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Animation d'entrée progressive
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
